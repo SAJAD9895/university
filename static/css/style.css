@@ -1,0 +1,82 @@
+/* Basic styling reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2b3b44;
+}
+
+/* Container for overall page */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #2b3b44, #354e5b);
+    color: white;
+}
+
+/* Logo and text section */
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+}
+
+.text-section h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.text-section p {
+    font-size: 14px;
+    margin: 2px 0;
+}
+
+/* Navigation buttons */
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    background-color: #1b2732;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background-color: #3c566d;
+}
+
+/* Main image section */
+.main-image {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.main-image img {
+    max-width: 100%;
+    border-radius: 20px;
+}
