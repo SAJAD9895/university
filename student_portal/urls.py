@@ -25,8 +25,10 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     # path('students/', views.students_list, name='students_list'),\
      path('landing/', views.landing, name='landing'),
+     
     path('about/', views.about, name='about'),
      path('contact/', views.contact, name='contact'),
+         path('', views.landing, name='landing'), 
     #    path('home/', views.home, name='home'),
     # path('admin/', admin.site.urls),
      path('load-content/<str:page>/', views.load_content, name='load_content'),
