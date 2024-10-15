@@ -12,45 +12,14 @@
             height: 100%;
             background: linear-gradient(135deg, #1a4a4a, #0f2a4a);
             color: white;
-            overflow: hidden;
+            overflow-x: hidden;
         }
         .page-content {
-            height: 100%;
+            min-height: 100%;
             padding: 20px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .logo-section {
-            display: flex;
-            align-items: center;
-        }
-        .logo {
-            width: 50px;
-            height: 50px;
-            margin-right: 15px;
-        }
-        .university-info {
-            font-size: 12px;
-        }
-        .nav-buttons {
-            display: flex;
-            align-items: center;
-        }
-        .nav-button {
-            background-color: #0a1a2a;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            margin-left: 10px;
-            border-radius: 20px;
-            cursor: pointer;
         }
         .main-logo {
             text-align: center;
@@ -67,7 +36,7 @@
         }
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
             margin-bottom: 20px;
             flex-grow: 1;
@@ -84,9 +53,10 @@
             font-size: 14px;
         }
         .add-button-container {
-            position: relative;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
             height: 50px;
-            margin-left: 20px;
             display: flex;
             align-items: center;
         }
@@ -106,7 +76,7 @@
         .social-buttons {
             display: flex;
             position: absolute;
-            left: 60px; /* Increased from 40px to 60px */
+            right: 60px;
             height: 40px;
             overflow: hidden;
             transition: width 0.3s ease;
@@ -121,21 +91,54 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            margin-right: 20px; /* Increased from 10px to 20px */
+            margin-right: 10px;
             flex-shrink: 0;
         }
         .social-button img {
             width: 20px;
             height: 20px;
         }
+
+        /* Media Queries */
+        /* Phone View */
+        @media (max-width: 767px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .university-name {
+                font-size: 18px;
+            }
+            .main-logo img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        /* Tablet View */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Laptop View */
+        @media (min-width: 1024px) {
+            .page-content {
+                padding: 40px;
+            }
+            .contact-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .university-name {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="page-content">
-      
-        
         <div class="main-logo">
-            <img src="https://via.placeholder.com/100" alt="University Main Logo">
+            <img src="https://s3-alpha-sig.figma.com/img/b84c/9f42/be4dc3620b7288fedae9cd645ab71a7f?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VvAvBPsklISruV8BMMojxT9r-7Hs9l4lt97lRHgp9Utpf0IKEVxgaaYpOz2CstrMtJxiG3Xveac5kdktRhiDU-Ei2QEBQMh-fMkyf4LkOv72r8y76BrldHLKID0DPj-TlP2RCHZ2W~Gv3Rrs8TsXNd1PqyKgjuaAMrrjt8y1ZDKTuCKlm0ImZNz6qWWlp~W8GgMt2okGfTHYiU4ZHRM06YbnIWDFKOqUUP9dU9~Wq3vv8eXPNNjnLyOX6dT95Czb7G4I3tVuRV4exwWwdzO5d2gOF5-c~L2Uj2~zCsdLeg7X4fml42V4yEBvBVAs9xb90i8ck9qgBNQlvuxHABszpQ__" alt="University Main Logo">
         </div>
         
         <div class="university-name">UNIVERSITY OF CALICUT</div>
@@ -175,13 +178,13 @@
             <div class="add-button" onclick="toggleSocialButtons()">+</div>
             <div class="social-buttons">
                 <div class="social-button">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu69GjG5IfhF4ltHb8wvjiGTr3_StEqa1RaA&s" alt="Facebook">
+                    <img src="https://via.placeholder.com/20" alt="Facebook">
                 </div>
                 <div class="social-button">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdgZeFHz8PAvu-YY5Uv86u5YeAB0i7tVeetQ&s" alt="Instagram">
+                    <img src="https://via.placeholder.com/20" alt="Instagram">
                 </div>
                 <div class="social-button">
-                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/youtube-app-white-icon.png" alt="YouTube">
+                    <img src="https://via.placeholder.com/20" alt="YouTube">
                 </div>
             </div>
         </div>
@@ -193,7 +196,7 @@
             const socialButtons = document.querySelector('.social-buttons');
             
             if (socialButtons.style.width === '0px' || socialButtons.style.width === '') {
-                socialButtons.style.width = '180px'; // Increased from 150px to 180px
+                socialButtons.style.width = '150px';
                 addButton.style.transform = 'rotate(45deg)';
             } else {
                 socialButtons.style.width = '0px';
