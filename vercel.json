@@ -1,7 +1,15 @@
 {
     "version": 2,
+    "builds": [
+      { "src": "student_portal/wsgi.py", "use": "@vercel/python",
+    "config":{
+        "maxLamdaSize":"15mb",
+        "runtime":"python3.12"
+    }
+    }
+    ],
     "routes": [
-      { "src": "/(.*)", "dest": "students/wsgi.py" }
+      { "src": "/(.*)", "dest": "student_portal/wsgi.py" }
     ]
   }
   
